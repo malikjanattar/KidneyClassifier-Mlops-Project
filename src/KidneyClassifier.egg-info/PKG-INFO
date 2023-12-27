@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: KidneyClassifier
+Version: 0.0.0
+Summary: A small python package for CNN app to classify kidney disease
+Home-page: https://github.com/malikjanattar/KidneyClassifier-Mlops-Project
+Author: malikjanattar
+Author-email: malikjanattar7866@gmail.com
+Project-URL: Bug Tracker, https://github.com/malikjanattar/KidneyClassifier-Mlops-Project/issues
+
+# KidneyClassifier-Mlops-Project
