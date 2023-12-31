@@ -215,3 +215,149 @@ x==========x]
 [2023-12-30 16:41:45,566: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2023-12-31 11:48:34,808: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-12-31 11:48:34,836: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-12-31 11:48:34,859: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-12-31 11:48:34,873: INFO: common: created directory at: artifacts]
+[2023-12-31 11:48:34,879: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-12-31 11:48:34,886: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-12-31 11:48:58,466: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-12-31 11:49:13,302: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-12-31 11:50:19,128: INFO: stage_02_prepare_base_model: *******************]
+[2023-12-31 11:50:19,141: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2023-12-31 11:50:19,146: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-12-31 11:50:19,155: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-12-31 11:50:19,156: INFO: common: created directory at: artifacts]
+[2023-12-31 11:50:19,160: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-12-31 11:50:24,431: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-12-31 11:50:25,115: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2023-12-31 11:50:35,390: INFO: stage_03_model_training: *******************]
+[2023-12-31 11:50:35,390: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2023-12-31 11:50:35,401: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-12-31 11:50:35,405: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-12-31 11:50:35,406: INFO: common: created directory at: artifacts]
+[2023-12-31 11:50:35,407: INFO: common: created directory at: artifacts\training]
+[2023-12-31 11:52:44,332: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2023-12-31 11:53:04,968: INFO: stage_04_model_evaluation: *******************]
+[2023-12-31 11:53:04,973: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2023-12-31 11:53:04,982: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-12-31 11:53:04,985: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-12-31 11:53:04,991: INFO: common: created directory at: artifacts]
+[2023-12-31 11:53:44,643: INFO: common: json file saved at: scores.json]
+[2023-12-31 11:53:44,645: INFO: common: json file saved at: scores.json]
+[2023-12-31 11:53:44,646: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2023-12-31 14:44:48,135: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.4:8080]
+[2023-12-31 14:44:48,140: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-12-31 14:45:59,490: INFO: _internal: 192.168.29.4 - - [31/Dec/2023 14:45:59] "GET / HTTP/1.1" 200 -]
+[2023-12-31 14:47:07,349: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\admin\.conda\envs\kidneyenv\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\admin\.conda\envs\kidneyenv\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\admin\.conda\envs\kidneyenv\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\admin\.conda\envs\kidneyenv\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\admin\.conda\envs\kidneyenv\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\admin\.conda\envs\kidneyenv\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "c:\users\admin\desktop\kidneyclassifier_mlops_project\kidneyclassifier-mlops-project\src\KidneyClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "C:\Users\admin\.conda\envs\kidneyenv\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "C:\Users\admin\.conda\envs\kidneyenv\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\admin\.conda\envs\kidneyenv\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2023-12-31 14:47:07,433: INFO: _internal: 192.168.29.4 - - [31/Dec/2023 14:47:07] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2023-12-31 14:57:06,627: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2023-12-31 14:57:06,628: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-12-31 14:57:06,634: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-12-31 14:57:06,635: INFO: common: created directory at: artifacts]
+[2023-12-31 14:57:06,636: INFO: common: created directory at: artifacts/data_ingestion]
+[2023-12-31 14:57:06,637: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-12-31 14:57:28,885: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2023-12-31 14:57:42,356: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2023-12-31 14:57:42,365: INFO: main: *******************]
+[2023-12-31 14:57:42,366: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2023-12-31 14:57:42,370: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-12-31 14:57:42,381: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-12-31 14:57:42,383: INFO: common: created directory at: artifacts]
+[2023-12-31 14:57:42,385: INFO: common: created directory at: artifacts/prepare_base_model]
+[2023-12-31 14:57:43,930: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2023-12-31 14:57:44,596: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2023-12-31 14:57:44,605: INFO: main: *******************]
+[2023-12-31 14:57:44,605: INFO: main: >>>>>> stage Training started <<<<<<]
+[2023-12-31 14:57:44,608: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-12-31 14:57:44,614: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-12-31 14:57:44,709: INFO: common: created directory at: artifacts]
+[2023-12-31 14:57:44,715: INFO: common: created directory at: artifacts\training]
+[2023-12-31 14:59:57,720: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2023-12-31 14:59:57,729: INFO: main: *******************]
+[2023-12-31 14:59:57,729: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2023-12-31 14:59:57,731: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-12-31 14:59:57,731: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-12-31 14:59:57,736: INFO: common: created directory at: artifacts]
+[2023-12-31 15:00:41,926: INFO: common: json file saved at: scores.json]
+[2023-12-31 15:00:41,928: INFO: common: json file saved at: scores.json]
+[2023-12-31 15:00:41,929: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2023-12-31 15:01:14,808: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.4:8080]
+[2023-12-31 15:01:14,808: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-12-31 15:01:30,104: INFO: _internal: 192.168.29.4 - - [31/Dec/2023 15:01:30] "GET / HTTP/1.1" 200 -]
+[2023-12-31 15:01:30,396: INFO: _internal: 192.168.29.4 - - [31/Dec/2023 15:01:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2023-12-31 15:01:52,136: INFO: _internal: 192.168.29.4 - - [31/Dec/2023 15:01:52] "POST /predict HTTP/1.1" 200 -]
+[2023-12-31 15:12:37,817: INFO: stage_03_model_training: *******************]
+[2023-12-31 15:12:37,817: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2023-12-31 15:12:37,828: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-12-31 15:12:37,830: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-12-31 15:12:37,830: INFO: common: created directory at: artifacts]
+[2023-12-31 15:12:37,833: INFO: common: created directory at: artifacts\training]
+[2023-12-31 15:41:19,643: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2023-12-31 15:41:33,463: INFO: stage_04_model_evaluation: *******************]
+[2023-12-31 15:41:33,463: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2023-12-31 15:41:33,463: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2023-12-31 15:41:33,463: INFO: common: yaml file: params.yaml loaded successfully]
+[2023-12-31 15:41:33,463: INFO: common: created directory at: artifacts]
+[2023-12-31 15:42:28,910: INFO: common: json file saved at: scores.json]
+[2023-12-31 15:42:28,912: INFO: common: json file saved at: scores.json]
+[2023-12-31 15:42:28,913: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2023-12-31 15:45:29,099: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.4:8080]
+[2023-12-31 15:45:29,099: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-12-31 15:45:43,082: INFO: _internal: 192.168.29.4 - - [31/Dec/2023 15:45:43] "GET / HTTP/1.1" 200 -]
+[2023-12-31 15:45:53,531: INFO: _internal: 192.168.29.4 - - [31/Dec/2023 15:45:53] "POST /predict HTTP/1.1" 200 -]
+[2023-12-31 15:46:04,817: INFO: _internal: 192.168.29.4 - - [31/Dec/2023 15:46:04] "POST /predict HTTP/1.1" 200 -]
+[2023-12-31 15:46:08,563: INFO: _internal: 192.168.29.4 - - [31/Dec/2023 15:46:08] "POST /predict HTTP/1.1" 200 -]
