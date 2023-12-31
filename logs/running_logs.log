@@ -361,3 +361,10 @@ x==========x]
 [2023-12-31 15:45:53,531: INFO: _internal: 192.168.29.4 - - [31/Dec/2023 15:45:53] "POST /predict HTTP/1.1" 200 -]
 [2023-12-31 15:46:04,817: INFO: _internal: 192.168.29.4 - - [31/Dec/2023 15:46:04] "POST /predict HTTP/1.1" 200 -]
 [2023-12-31 15:46:08,563: INFO: _internal: 192.168.29.4 - - [31/Dec/2023 15:46:08] "POST /predict HTTP/1.1" 200 -]
+[2023-12-31 16:00:59,432: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.4:8080]
+[2023-12-31 16:00:59,433: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2023-12-31 16:01:26,992: INFO: _internal: 192.168.29.4 - - [31/Dec/2023 16:01:26] "GET / HTTP/1.1" 200 -]
+[2023-12-31 16:01:37,426: INFO: _internal: 192.168.29.4 - - [31/Dec/2023 16:01:37] "POST /predict HTTP/1.1" 200 -]
