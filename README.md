@@ -35,6 +35,8 @@ Our final step involves deploying the model on the cloud using Docker and DVC. T
 
 ## Demo :
 
+https://github.com/malikjanattar/KidneyClassifier-Mlops-Project/assets/114000175/59b3eb4b-8aec-4aa9-bf79-aeffddb916db
+
 
 
 ## 🔗 Links
